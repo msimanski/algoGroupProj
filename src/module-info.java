@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author michaelsimanski
+ *
+ */
+module algoGroupProj
+{
+}
