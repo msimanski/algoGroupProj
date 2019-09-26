@@ -10,22 +10,22 @@ public class Sort
 	{
 		ArrayList<Integer> unsortedList = new ArrayList<Integer>(Arrays.asList(14, 5 ,88, 313, 43, 17, 24, 42));
 		
-		System.out.println(mergeSort(unsortedList.size(), unsortedList));
+		System.out.println(mergeSort(unsortedList));
 	}
 	
-	public static ArrayList<Integer> mergeSort(int n, ArrayList<Integer> a) 
+	public static ArrayList<Integer> mergeSort(ArrayList<Integer> a) 
 	{
-		if(n == 1) 
+		if(a.size() == 1) 
 		{
 			return a;
 		}
-		
+		System.out.println("Size of A: " + a.size());
 		ArrayList<Integer> copy = a;
-		ArrayList<Integer> part1 = new ArrayList<Integer>(a.subList(0, (n-1)/2));
-		ArrayList<Integer> part2 = new ArrayList<Integer>(copy.subList(((n -1)/2)+1, n-1));
+		ArrayList<Integer> part1 = new ArrayList<Integer>(a.subList(0, (a.size())/2));
+		ArrayList<Integer> part2 = new ArrayList<Integer>(copy.subList(((a.size())/2), a.size()));
 		
-		part1 = mergeSort(n, part1);
-		part2 = mergeSort(n, part2);
+		part1 = mergeSort(part1);
+		part2 = mergeSort(part2);
 		
 		return merge(part1, part2);
 	}
