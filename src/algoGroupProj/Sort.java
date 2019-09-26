@@ -1,14 +1,22 @@
 package algoGroupProj;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Random;
 
 public class Sort
 {
 
 	public static void main(String[] args)
 	{
-		ArrayList<Integer> unsortedList = new ArrayList<Integer>(Arrays.asList(14, 5 ,88, 313, 43, 17, 24, 42));
+		//ArrayList<Integer> unsortedList = new ArrayList<Integer>(Arrays.asList(14, 5 ,88, 313, 43, 17, 24, 42));
+		ArrayList<Integer> unsortedList = new ArrayList<Integer>();
+		
+		Random rnGesus = new Random(System.currentTimeMillis());
+		
+		for(int i = 0; i < 50; i++) 
+		{
+			unsortedList.add(rnGesus.nextInt(1000));
+		}
 		
 		System.out.println(mergeSort(unsortedList));
 	}
@@ -19,7 +27,7 @@ public class Sort
 		{
 			return a;
 		}
-		System.out.println("Size of A: " + a.size());
+		//System.out.println("Size of A: " + a.size());
 		ArrayList<Integer> copy = a;
 		ArrayList<Integer> part1 = new ArrayList<Integer>(a.subList(0, (a.size())/2));
 		ArrayList<Integer> part2 = new ArrayList<Integer>(copy.subList(((a.size())/2), a.size()));
@@ -38,25 +46,25 @@ public class Sort
 		{
 			if(a.get(0) > b.get(0))
 			{
-				c.add(c.size() - 1, b.get(0));
+				c.add(c.size(), b.get(0));
 				b.remove(0);
 			}
 			else 
 			{
-				c.add(c.size() - 1, a.get(0));
+				c.add(c.size(), a.get(0));
 				a.remove(0);
 			}
 		}
 		
 		while(!(a.isEmpty())) 
 		{
-			c.add(c.size() - 1, a.get(0));
+			c.add(c.size(), a.get(0));
 			a.remove(0);
 		}
 		
 		while(!(b.isEmpty())) 
 		{
-			c.add(c.size() - 1, b.get(0));
+			c.add(c.size(), b.get(0));
 			b.remove(0);
 		}
 		
