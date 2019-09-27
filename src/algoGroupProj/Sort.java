@@ -2,6 +2,7 @@ package algoGroupProj;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Sort
 {
@@ -11,11 +12,18 @@ public class Sort
 		//ArrayList<Integer> unsortedList = new ArrayList<Integer>(Arrays.asList(14, 5 ,88, 313, 43, 17, 24, 42));
 		ArrayList<Integer> unsortedList = new ArrayList<Integer>();
 		
+		Scanner scr = new Scanner(System.in);
+		
+		System.out.println("Size of unsorted ArrayList: ");
+		int sizeOfA = scr.nextInt();
+		System.out.println("Scope of random numbers: ");
+		int scopeOfRnd = scr.nextInt();
+		
 		Random rnGesus = new Random(System.currentTimeMillis());
 		
-		for(int i = 0; i < 50; i++) 
+		for(int i = 0; i < sizeOfA; i++) 
 		{
-			unsortedList.add(rnGesus.nextInt(1000));
+			unsortedList.add(rnGesus.nextInt(scopeOfRnd));
 		}
 		
 		System.out.println(mergeSort(unsortedList));
